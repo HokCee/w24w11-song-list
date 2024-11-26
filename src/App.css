@@ -4,3 +4,30 @@ h1 {
   padding: 30px;
   background-color: #A8D1D1;
 }
+
+.playlist {
+  padding: 20px;
+  margin-bottom: 16px;
+  background-color: #FD8A8A;
+}
+
+.container {
+  position: relative;
+}
+
+a {
+  color: white;
+}
+
+img {
+  width: 100%;
+}
+
+.song-title {
+  position: absolute;
+  width: 100%;
+  bottom: 5px;
+  padding: 16px 0px;
+  text-align: center;
+  background-color: rgba(0,0,0, 0.5);
+}
