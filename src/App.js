@@ -2,13 +2,18 @@ import './App.css'
 import Container from './Container'
 
 const App = () => {
+  const songs = [
+    "비틀비틀 짝짜꿍",
+    "시퍼런 봄",
+    "Desert Eagle",
+  ]
+
   return (
     <div>
       <Header/>
-      <Playlist/>
-      <Container title="비틀비틀 짝짜꿍" index="1"/>
-      <Container title="시퍼런 봄" index="2"/>
-      <Container title="Desert Eagle" index="3"/>
+      <Playlist 
+        title="프로그래밍 하면서 듣고 싶은 노래"
+        listSong={songs}/>
     </div>
   )
 }
@@ -19,9 +24,15 @@ const Header = () => {
   )
 }
 
-const Playlist = () => {
+const Playlist = props => {
   return (
-      <div className="playlist">프로그래밍하면서 듣고 싶은 노래</div>
+      <div className="playlist">
+        <div className="playlist">{props.title}</div>
+        {
+          props.listSong.map((song, index) =>
+            <Container key={index} title={song} index={index}/>)
+        }
+      </div>
   )
 }
 
