@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { FaStar } from 'react-icons/fa'
+
 
 const Container = (props) => {
   const [lyricsExpanded, setLyricsExpanded] = useState(false)
@@ -17,11 +19,17 @@ const Container = (props) => {
           <a 
             href={`https://www.youtube.com/results?search_query=${props.song.title}`}
             target="_blank"
-            rel="noreferrer">
+            rel='noreferrer'>
             <div className="song-title">
               {`${props.song.title} (${props.song.singer})`}
             </div>
           </a>
+          {/* Rating을 FaStar Icon으로 출력 */}
+          <div className="song-rating">
+            {[...Array(props.song.rating)].map((_, index) => (
+              <FaStar key={index} />
+            ))}
+          </div>
         </div>
         {props.song.lyrics && lyricsExpanded && (
             <pre className="song-lyrics" onClick={toggleLyrics}>
